@@ -1,0 +1,17 @@
+{
+  "name": "s3",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun run index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/s3rver": "^3.7.4",
+    "s3rver": "^3.7.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

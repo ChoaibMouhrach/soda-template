@@ -1,0 +1,35 @@
+{
+  "name": "soda",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev:noterm": "bun --env-file=.env  --filter='*' run dev",
+    "dev": "bun --env-file=.env --elide-lines=0 --filter='*' dev",
+    "compile:noterm": "bun --env-file=.env --filter='*' compile",
+    "compile": "bun --env-file=.env --elide-lines=0 --filter='*' compile",
+    "ts:check": "bun --env-file=.env  --filter='*' run ts:check",
+    "env:check": "bun --env-file=.env  --filter='*' run env:check",
+    "lint:check": "bun --env-file=.env  --filter='*' run lint:check",
+    "containers:up": "docker compose up",
+    "containers:down": "docker compose down",
+    "db:generate": "bun --env-file=.env  --filter='*' run db:generate",
+    "db:migrate": "bun --env-file=.env  --filter='*' run db:migrate",
+    "db:studio": "bun --env-file=.env  --filter='*' run db:migrate",
+    "db:generate:term": "bun --env-file=.env --elide-lines=0 --filter='*' run db:generate",
+    "db:migrate:term": "bun --env-file=.env --elide-lines=0 --filter='*' run db:migrate"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {
+    "pg": "^8.16.0"
+  }
+}
